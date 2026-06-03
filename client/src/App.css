@@ -1,0 +1,271 @@
+:root {
+  --background: #0f172a;
+  --surface: #16213e;
+  --surface-strong: #1f2a47;
+  --text: #e2e8f0;
+  --text-muted: #94a3b8;
+  --accent: #7dd3fc;
+  --border: #334155;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--background);
+  color: var(--text);
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.App {
+  min-height: 100vh;
+}
+
+.App-header {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.App-header h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 2.2vw, 2.4rem);
+}
+
+.App-header p {
+  margin: 0.5rem 0 0;
+  color: var(--text-muted);
+  max-width: 640px;
+}
+
+.wallet-status {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.75rem;
+}
+
+.wallet-status button {
+  border: none;
+  background: var(--accent);
+  color: #0f172a;
+  padding: 0.75rem 1.25rem;
+  border-radius: 9999px;
+  cursor: pointer;
+}
+
+.wallet-status button:hover {
+  opacity: 0.95;
+}
+
+.wallet-info p {
+  margin: 0.25rem 0;
+  color: var(--text-muted);
+}
+
+.App-main {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  padding: 1.5rem 2rem;
+}
+
+.App-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.App-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.home-page .exercise-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.exercise-card {
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  background: var(--surface);
+}
+
+.exercise-card h3 {
+  margin-top: 0;
+}
+
+.exercise-card p {
+  color: var(--text-muted);
+  min-height: 3rem;
+}
+
+.exercise-card a {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.back-link {
+  color: var(--accent);
+  text-decoration: none;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.contract-interface,
+.blockchain-info,
+.tx-details,
+.instructions,
+.not-found {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1.25rem;
+}
+
+.contract-header {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr auto;
+  margin-bottom: 1rem;
+}
+
+.contract-interface h2,
+.blockchain-info h2,
+.tx-details h2,
+.instructions h2 {
+  margin-top: 0;
+}
+
+.action-card {
+  border-top: 1px solid var(--border);
+  padding: 1rem 0;
+}
+
+.action-card h3 {
+  margin: 0 0 0.75rem;
+}
+
+.action-inputs {
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.action-inputs label {
+  display: grid;
+  gap: 0.35rem;
+  color: var(--text-muted);
+}
+
+.action-inputs input {
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--border);
+  background: #0f172a;
+  color: var(--text);
+}
+
+.action-card button {
+  border: none;
+  background: var(--accent);
+  color: #0f172a;
+  padding: 0.75rem 1rem;
+  border-radius: 9999px;
+  cursor: pointer;
+}
+
+.contract-results ul,
+.tx-details ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contract-results li,
+.tx-details li {
+  margin-bottom: 0.75rem;
+}
+
+.contract-results pre {
+  margin: 0.5rem 0 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  background: #111827;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+}
+
+.info-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.info-grid div {
+  border: 1px solid var(--border);
+  padding: 0.9rem;
+  border-radius: 0.75rem;
+  background: #111827;
+}
+
+.refresh-button {
+  align-self: end;
+}
+
+.refresh-button button {
+  width: 100%;
+  border: none;
+  background: var(--accent);
+  color: #0f172a;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  cursor: pointer;
+}
+
+.instructions ul {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: var(--text-muted);
+}
+
+.instructions li {
+  margin-bottom: 0.75rem;
+}
+
+.App-footer {
+  padding: 1.5rem 2rem;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 960px) {
+  .App-main {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .App-header,
+  .App-main,
+  .App-footer {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}

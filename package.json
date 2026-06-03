@@ -1,0 +1,28 @@
+{
+  "name": "blockchain-tp-dapp",
+  "version": "1.0.0",
+  "private": true,
+  "description": "dApp TP3 Blockchain et Web3 - Truffle + React",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "client-install": "cd client && npm install",
+    "client-start": "cd client && npm start",
+    "client-build": "cd client && npm run build",
+    "truffle-compile": "truffle compile",
+    "truffle-migrate": "truffle migrate --reset --network development",
+    "sync-contracts": "node scripts/sync-contracts.js",
+    "deploy": "npm run truffle-migrate && npm run sync-contracts"
+  },
+  "devDependencies": {
+    "truffle": "^5.9.0"
+  },
+  "keywords": [
+    "blockchain",
+    "dapp",
+    "truffle",
+    "react",
+    "solidity"
+  ],
+  "author": "",
+  "license": "MIT"
+}

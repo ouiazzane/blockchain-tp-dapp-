@@ -117,11 +117,12 @@ function App() {
       // Prevent Web3 ENS lookups from throwing on private Ganache networks.
       // Provide a minimal stub for `eth.ens` so Web3 won't attempt real ENS resolution.
       try {
-        if (web3Instance && web3Instance.eth && (web3Instance.eth.ens === undefined || web3Instance.eth.ens === null)) {
+        if (web3Instance && web3Instance.eth) {
           web3Instance.eth.ens = {
             getAddress: async () => Promise.reject(new Error('ENS unsupported on private network')),
             getName: async () => null,
             lookup: async () => null,
+            checkNetwork: async () => null,
           };
         }
       } catch (e) {

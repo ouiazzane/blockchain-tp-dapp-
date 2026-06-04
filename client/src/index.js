@@ -11,9 +11,9 @@ if (typeof window !== 'undefined') {
     try {
       const reason = event.reason;
       const msg = typeof reason === 'string' ? reason : reason && reason.message;
-      if (msg && /ENS is not supported/i.test(msg)) {
-        // Prevent the error from appearing as an uncaught rejection
-        console.warn('Suppressed ENS error on private network:', msg);
+      if (msg && (/ENS is not supported/i.test(msg) || /Network not synced; last block was/i.test(msg))) {
+        // Prevent known Web3/ENS errors from appearing as uncaught rejections
+        console.warn('Suppressed known Web3 error on private network:', msg);
         event.preventDefault();
       }
     } catch (e) {
